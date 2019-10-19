@@ -1,0 +1,227 @@
+// 公共样式
+.flexBox {
+    display: flex;
+}
+.radius10 {
+    border-radius: 10px;
+}
+.font14 {
+    font-size: 14px;
+}
+.font16 {
+    font-size: 16px;
+}
+.tCenter {
+    text-align: center;
+}
+.poin {
+    cursor: pointer;
+}
+//混入
+@mixin radiusVal($val) {
+    border-radius: $val;
+}
+// 登录页
+.login {
+    // @include radiusVal(20px);
+    background-color: #fa8bff;
+    background-image: linear-gradient(
+        45deg,
+        #fa8bff 0%,
+        #2bd2ff 52%,
+        #2bff88 90%
+    );
+    height: 100vh;
+    text-align: center;
+    input {
+        @extend .tCenter;
+        @include radiusVal(10px);
+        @extend .font16;
+        height: 40px;
+        margin-top: 50%;
+        border: none;
+    }
+    button {
+        @extend .tCenter;
+        @include radiusVal(10px);
+        @extend .font16;
+        @extend .poin;
+        height: 40px;
+        width: 120px;
+        margin-top: 20px;
+        border: none;
+        background-color: #fbda61;
+        background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+    }
+    .methodText {
+        .attention {
+            color: orangered;
+        }
+    }
+    .logo {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 80%;
+        top: 90%;
+        border-radius: 20px;
+    }
+}
+//聊天页面
+.chat {
+    background-color: #ffdee9;
+    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+    position: relative;
+    height: 100vh;
+    .top {
+        height: 30px;
+        @extend .tCenter;
+        color: orangered;
+        span {
+            float: center;
+        }
+        button {
+            @include radiusVal(10px);
+            @extend .font14;
+            @extend .poin;
+            float: right;
+            margin-left: -80px;
+            background-color: #fbda61;
+            background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+            color: gray;
+            border: none;
+            width: 80px;
+            height: 30px;
+        }
+    }
+    .mainMsg {
+        background-color: #ffdee9;
+        background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+        height: calc(100% - 80px);
+        overflow-y: scroll;
+        隐藏滚动条 &::-webkit-scrollbar {
+            width: 0;
+        }
+        .tip {
+            @extend .tCenter;
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            .tipMsg {
+                @include radiusVal(6px);
+                display: inline-block;
+                background-color: grey;
+                color: white;
+                font-size: 15px;
+                opacity: 0.5;
+                padding: 8px;
+            }
+        }
+        .leftText {
+            @extend .flexBox;
+            width: 100%;
+            margin-top: 20px;
+            .leftName {
+                display: block;
+                margin-left: 10px;
+                font-size: 12px;
+            }
+            .leftMsg {
+                display: inline-block;
+                position: relative;
+                max-width: 60%;
+                margin-left: 10px;
+                margin-top: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                background: #fff;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    left: -15px;
+                    top: 6px;
+                    border-width: 8px;
+                    border-style: solid;
+                    border-color: transparent rgb(255, 255, 255) transparent
+                        transparent;
+                }
+            }
+            .img {
+                min-width: 40px;
+                height: 40px;
+                margin-top: 10px;
+                background: url(../imgs/th.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .aiImg {
+                min-width: 40px;
+                height: 40px;
+                margin-top: 10px;
+                background: url(../imgs/th.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .rightText {
+            @extend .flexBox;
+            flex-direction: row-reverse;
+            width: 100%;
+            margin-top: 20px;
+            .rightMsg {
+                display: inline-block;
+                position: relative;
+                max-width: 60%;
+                margin-right: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                background: rgb(98, 185, 0);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    right: -15px;
+                    top: 7px;
+                    border-width: 8px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent
+                        rgb(98, 185, 0);
+                    border-image: initial;
+                }
+            }
+            .img {
+                width: 40px;
+                height: 40px;
+                background: url(../imgs/right.jpg) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .footer {
+        @extend .flexBox;
+        height: 40px;
+        margin-top: 10px;
+        input {
+            @extend .font16;
+            @include radiusVal(10px);
+            color: gray;
+            border: none;
+            width: 410px;
+            height: 40px;
+            padding: 0;
+            padding-left: 10px;
+        }
+        button {
+            @include radiusVal(10px);
+            @extend .font16;
+            background-color: #fbda61;
+            background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+            color: gray;
+            border: none;
+            width: 80px;
+            height: 40px;
+        }
+    }
+}
