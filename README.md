@@ -9,5 +9,5 @@
 ![Image text](https://github.com/sq-github/IChat/raw/master/readmeImgs/login.png)
 ![Image text](https://github.com/sq-github/IChat/raw/master/readmeImgs/chat.png)
 ![Image text](https://github.com/sq-github/IChat/raw/master/readmeImgs/ai.png) 
-4. 项目参考：https://github.com/microzz/vue-chat,https://github.com/lss5270/chatroom-vue。
+4. 项目参考：https://github.com/microzz/vue-chat, https://github.com/lss5270/chatroom-vue。 
 仅供学习。
